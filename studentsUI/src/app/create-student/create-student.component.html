@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addmition of Student</title>
+</head>
+<body>
+    <h1>Fill Addmision Details</h1>
+    <form>
+        <label>
+            Name:
+            <input type="text" name="name" [(ngModel)]="name" required>
+        </label>
+        <label>
+            Age:
+            <input type="number" name="age" [(ngModel)]="age" required>
+        </label>
+        <label>
+            Mobile:
+            <input type="number" name="mobile" [(ngModel)]="mobile" required>
+        </label>
+        <label>
+            Address:
+            <input type="email" name="address" [(ngModel)]="address" required>
+        </label>
+        <button type="submit" (click)="createStudent()">Create</button>
+      </form>
+</body>
+</html>
