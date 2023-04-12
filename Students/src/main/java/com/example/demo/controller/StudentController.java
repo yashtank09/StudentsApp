@@ -10,28 +10,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.Student;
-import com.example.demo.repository.StudentRepository;
+import com.example.demo.services.StudentServices;
 
 @RestController
 @RequestMapping("/students/")
 public class StudentController {
 	
 	@Autowired
-	StudentRepository studRepo;
+	StudentServices studentService;
 	
 	@GetMapping("/debug/")
 	public void debug() {
 		System.out.println("Debug method called...");
-		Student st = new Student();
 	}
 	
 	@GetMapping("/show/")
 	public List<Student> getAll(){
-		return studRepo.findAll();
+		return studentService.getAllStudents();
 	}
 	
 	@PostMapping("/add/")
 	public Student addStudent(@RequestBody Student students) {
-		return studRepo.save(students);
+		return studentService.addStudent(students);
 	}
 }
