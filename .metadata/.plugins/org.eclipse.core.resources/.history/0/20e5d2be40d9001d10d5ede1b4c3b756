@@ -1,0 +1,15 @@
+package com.example.demo.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.example.demo.repository.StudentRepository;
+
+public class StudentServices {
+	
+	@Autowired
+	StudentRepository studentRepo;
+	
+	
+	
+	
+}

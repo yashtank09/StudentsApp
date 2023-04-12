@@ -1,0 +1,24 @@
+package com.example.demo.model;
+
+import jakarta.persistence.Entity;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+public class Student {
+	
+	private String name;
+	private String address;
+	private int age;
+	private int pincode;
+	private long mobile;
+	
+}
