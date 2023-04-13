@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.model.Student;
 import com.example.demo.services.StudentServices;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/students/")
 public class StudentController {
@@ -25,13 +26,11 @@ public class StudentController {
 		System.out.println("Debug method called...");
 	}
 	
-	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/show/")
 	public List<Student> getAll(){
 		return studentService.getAllStudents();
 	}
 	
-	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping("/add/")
 	public Student addStudent(@RequestBody Student students) {
 		return studentService.addStudent(students);
