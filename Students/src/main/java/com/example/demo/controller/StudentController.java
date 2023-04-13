@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,11 +25,13 @@ public class StudentController {
 		System.out.println("Debug method called...");
 	}
 	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/show/")
 	public List<Student> getAll(){
 		return studentService.getAllStudents();
 	}
 	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping("/add/")
 	public Student addStudent(@RequestBody Student students) {
 		return studentService.addStudent(students);
